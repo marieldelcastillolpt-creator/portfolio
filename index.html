@@ -269,7 +269,7 @@ img,video{display:block;max-width:100%}
     radial-gradient(70% 60% at 50% 35%,rgba(225,29,46,.45),transparent 70%),
     linear-gradient(180deg,#2a0a0f,#0d0809);
 }
-.c-profile .photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.c-profile .photo img{width:100%;height:100%;object-fit:cover;object-position:center 15%;position:absolute;inset:0}
 .c-profile .photo .ph{
   position:absolute;inset:0;display:grid;place-items:center;
   font-family:var(--display);font-size:180px;line-height:1;color:rgba(255,65,82,.22);letter-spacing:-.02em;
@@ -1047,6 +1047,96 @@ const PROJECTS = [
     result:"A full month of content planned and drafted in one sitting, with every post tied to a goal."
   },
   {
+    id:"chat-ai", cat:"AI Systems", title:"AI Chat Assistant",
+    blurb:"A website and member-portal chat that answers parents, students and partners day and night, then hands over to a person.",
+    tags:["Conversation AI","Chat widget","GHL workflows"], cover:"assets/ai-chat-assistant-cover.jpg",
+    brief:"Answer every question from a website visitor or an enrolled student, at any hour, without the team living in the inbox.",
+    built:"A branded GHL chat on the website and in the member portal. The AI asks who it is talking to (parent, student, counselor or someone else), tags them, and answers from a researched, fact-checked knowledge base. When it can't help, or someone asks for a person, it hands the chat to the team and sends an instant alert.",
+    stack:"GoHighLevel chat widget, Conversation AI, knowledge base, workflows, Claude for research and copy",
+    result:"Live on the website and in the student portal within two days. 138 fact-checked answers at launch, every chat tagged by role, and a monthly AI spending cap so costs can't run away.",
+    pdf:"assets/ai-chat-assistant-case-study.pdf"
+  },
+  {
+    id:"membership", cat:"Automation", title:"Coaching Membership",
+    blurb:"A monthly coaching membership where the parent pays, the student books, and renewals, failed cards and cancellations look after themselves.",
+    tags:["GHL workflows","Subscriptions","Calendars"], cover:"assets/coaching-membership-cover.jpg",
+    brief:"Sell a monthly one-to-one coaching membership to parents, let the student book their own call, and keep it to one call a month without anyone policing it.",
+    built:"Two ways to join, both ending in one subscription on the parent. The parent adds their child on a short page, and the child gets their own sign-in, course, private channel and monthly call. A booking check keeps it to one call a month, and renewals, failed payments and cancellations each run on their own.",
+    stack:"GoHighLevel funnels, calendars, payments and subscriptions, workflows, CRM associations, memberships and communities, Claude for the build, tests and records",
+    result:"Live end to end in 9 days, with 18 workflows working together. A 52-point live check went from 7 failures to none, and the first real renewal ran on its own.",
+    pdf:"assets/coaching-membership-case-study.pdf"
+  },
+  {
+    id:"checkout", cat:"Funnels", title:"Sales Page and Checkout",
+    blurb:"A course sales page with a short checkout, a one-tick add-on, and a follow-up for families who leave at payment.",
+    tags:["GHL funnels","Order bump","Email follow-up"], cover:"assets/sales-page-checkout-cover.jpg",
+    brief:"Make buying the course quick for parents, and catch the families who start paying but don't finish.",
+    built:"A sales page and short checkout with a one-tick add-on, two questions moved to after payment, and a thank-you page that hands the parent straight on to adding their child. Plus a two-step checkout with a four-email follow-up, each email sent only if the family still hasn't bought.",
+    stack:"GoHighLevel funnels, order forms, order bumps, payments in test mode, workflows, pipelines and email, Claude for the build, tests and records",
+    result:"The sales page and checkout are live. Six test orders over three rounds, with and without the add-on, and the two-step checkout and follow-up tested end to end, ready to go live together.",
+    pdf:"assets/sales-page-checkout-case-study.pdf"
+  },
+  {
+    id:"bookings", cat:"GHL", title:"Paid Bookings",
+    blurb:"Calendars that take payment when a family books, one 24-hour cancellation rule, and a free call whose follow-up runs by itself.",
+    tags:["Calendars","Payments","Pipelines"], cover:"assets/paid-bookings-cover.jpg",
+    brief:"Let families book and pay in one step, keep one fair cancellation rule, and stop the team following up every free call by hand.",
+    built:"Paid calendars that take the payment at booking, with one 24-hour cancel and move cut-off across all three. For the free call with the founder: a confirmation for each kind of booker, reminders, rebook emails and a card in the sales pipeline.",
+    stack:"GoHighLevel calendars, payments, workflows and pipelines, Claude for the build, tests and records",
+    result:"Five published workflows run the free call's follow-up, and a real booking reaches the sales pipeline in 8 seconds. No paid booking has come through yet, and the guide says so plainly.",
+    pdf:"assets/paid-bookings-case-study.pdf"
+  },
+  {
+    id:"website", cat:"Websites", title:"Website, SEO and Analytics",
+    blurb:"Analytics on the pages that had none, a cookie banner that asks first, and a tested plan for being found on Google and in AI answers.",
+    tags:["Google Analytics 4","Technical SEO","Cookie consent"], cover:"assets/website-seo-analytics-cover.jpg",
+    brief:"Measure what the website does, ask visitors before tracking them, and get the business found on Google and in AI answers.",
+    built:"Google Analytics on the funnel pages with key events, Search Console linked and three sitemaps submitted. A cookie banner that sets no analytics cookies until the visitor answers. A clean-up of old promises on the live site, a simpler proposed site structure, and a plan of findability fixes.",
+    stack:"GoHighLevel websites, funnels, redirects and cookie consent, Google Analytics 4, Tag Manager, Search Console, Claude for the build, research and records",
+    result:"3 sitemaps read by Google where none had been. No analytics cookies before a visitor answers the banner. The proposed menu goes from 18 top-level items to 5, and 26 fixes are planned, each with a backup, a test and an undo.",
+    pdf:"assets/website-seo-analytics-case-study.pdf"
+  },
+  {
+    id:"leads", cat:"Funnels", title:"Lead Capture",
+    blurb:"One quiz that keeps every family's answers and source, an instant reply when someone comments for it on social, and a source tag on every lead.",
+    tags:["Forms","Social automation","UTM tracking"], cover:"assets/lead-capture-cover.jpg",
+    brief:"Know where every lead came from and what they said, and answer social comments the moment they land.",
+    built:"Two quizzes, two forms and two workflows merged into one of each, with every old link still working. Every quiz entry saves 11 hidden details. A comment on Facebook or Instagram gets a public reply and the quiz in a private message, and one workflow tags leads from 9 forms with their source.",
+    stack:"GoHighLevel forms and hidden fields, custom fields, workflows, Facebook and Instagram comment triggers, funnels and redirects, Claude for the build, tests and records",
+    result:"Every quiz entry keeps the family's answers, result and source. A comment gets a reply and the quiz in about a minute, and the team has a link maker to tag new links themselves.",
+    pdf:"assets/lead-capture-case-study.pdf"
+  },
+  {
+    id:"reengage", cat:"Automation", title:"Email Re-engagement",
+    blurb:"A paced, self-sorting drip that asks 345 cold contacts if they still want to hear from the business, without hurting the sending domain.",
+    tags:["Deliverability","Email drip","DNS"], cover:"assets/email-re-engagement-cover.jpg",
+    brief:"Wake up a quiet list safely: ask once, sort every reply, and keep the domain healthy.",
+    built:"A drip that paces itself and sorts every reply and click, on a new sender set up to pass SPF, DKIM and DMARC, with replies routed into the CRM. A WhatsApp list brought into line with the CRM.",
+    stack:"GoHighLevel workflows, drip, smart lists, tags, trigger links and sending domains, DNS, Google Postmaster Tools, WhatsApp Business, Claude for the build, tests and records",
+    result:"0 spam complaints and 0 unsubscribes in the first 175 emails. A sender that passes all three email checks, and 76 family emails audited for where a reply lands. The drip is still running.",
+    pdf:"assets/email-re-engagement-case-study.pdf"
+  },
+  {
+    id:"course", cat:"GHL", title:"Online Course Portal",
+    blurb:"A flagship online course loaded lesson by lesson into a student portal, with one materials check that shows where every lesson stands.",
+    tags:["Courses","Client portal","QA"], cover:"assets/online-course-portal-cover.jpg",
+    brief:"Get every lesson's video, thumbnail, worksheet and slides into the portal in order, and always know what is still missing.",
+    built:"A materials check tracking 48 lessons piece by piece, and the main fill of files, thumbnails, videos and lesson text done in one night. A clearer portal: 'My courses' in the menu, one filter, a branded course page, and fewer emails for a new student.",
+    stack:"GoHighLevel courses, client portal, communities and custom code, YouTube, Google Drive and Slides, Claude for the build, checks and records",
+    result:"25 files, 11 thumbnails and 3 videos loaded, every file checked byte for byte. 12 dated backups, each with the steps to undo it, and a change log of every change.",
+    pdf:"assets/online-course-portal-case-study.pdf"
+  },
+  {
+    id:"ops", cat:"AI Systems", title:"Behind the Scenes",
+    blurb:"The operations system I set up with Claude: one organised business brain, specialist AI agents and scheduled automations that report back.",
+    tags:["Claude","AI agents","Operations"], cover:"assets/behind-the-scenes-cover.jpg",
+    brief:"Give a small team one place for everything, and take the routine admin off their plates without losing control.",
+    built:"One organised business brain, 8 specialist AI agents each with only the tools its job needs, 18 scheduled automations in a written register, 17 step-by-step guides and a live team dashboard, all under written rules.",
+    stack:"Claude sessions, agents, scheduled tasks and private dashboards, plus Slack, Gmail, Google Drive and Calendar, a meeting recorder and GoHighLevel",
+    result:"The brain organised and the first automations running the day the plan was approved. 477 tasks and deliverables in one store, read live by the team dashboard, and meeting to-dos filed into one list by themselves.",
+    pdf:"assets/behind-the-scenes-case-study.pdf"
+  },
+  {
     id:"speed", cat:"Automation", title:"Speed-to-Lead Workflow",
     blurb:"Every new lead gets a text and an email in under a minute, day or night.",
     tags:["GHL workflows","SMS","Email"], gen:"g-flow",
@@ -1194,6 +1284,7 @@ const genInner = g => ({
 }[g]||'');
 const media = (p, big) => p.video
   ? `<video src="${p.video}" poster="${p.poster}" muted loop playsinline ${big?'autoplay controls':''}></video>`
+  : p.cover ? `<img src="${p.cover}" alt="${p.title}">`
   : `<div class="gen ${p.gen}">${genInner(p.gen)}</div>`;
 $('#workGrid').innerHTML = PROJECTS.map((p,i) => `
   <article class="card proj reveal" style="--i:${i+2}" data-cat="${p.cat}" data-open="${p.id}" tabindex="0" role="button" aria-label="Open ${p.title}">
@@ -1231,7 +1322,7 @@ function openProject(id){
       <span>Result</span><p>${p.result}</p>
     </div>
     <div style="display:flex;gap:6px;flex-wrap:wrap">${p.tags.map(t=>`<span class="tagc">${t}</span>`).join('')}</div>
-    <div style="margin-top:auto;padding-top:10px"><a href="#contact" class="btn" data-close>Want one like this? ${svg('arrow')}</a></div>`;
+    <div style="margin-top:auto;padding-top:10px;display:flex;gap:8px;flex-wrap:wrap"><a href="#contact" class="btn" data-close>Want one like this? ${svg('arrow')}</a>${p.pdf?`<a href="${p.pdf}" class="btn ghost" download>Download the case study (PDF)</a>`:''}</div>`;
   modal.classList.add('on'); modal.setAttribute('aria-hidden','false');
   $('#mClose').focus();
 }
